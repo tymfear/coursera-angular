@@ -1,0 +1,15 @@
+.green-border {
+    border: green solid 3px;
+}
+
+.red-border {
+    border: red solid 3px;;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
