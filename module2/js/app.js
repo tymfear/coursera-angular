@@ -44,10 +44,9 @@
     self.boughtList = [];
 
     self.buyItem = function (index) {
-      var item = self.toBuyList[index];
+      var item = self.toBuyList.splice(index, 1)[0];
 
       self.boughtList.push(item);
-      self.toBuyList.splice(index, 1);
     };
   }
 })();
