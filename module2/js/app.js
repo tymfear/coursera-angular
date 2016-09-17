@@ -11,24 +11,28 @@
   app.service('ShoppingListCheckOffService', ShoppingListCheckOffService);
 
   ToBuyShoppingController.$inject =
-    ['$scope', 'ShoppingListCheckOffService'];
+    ['ShoppingListCheckOffService'];
 
   AlreadyBoughtShoppingController.$inject =
-    ['$scope', 'ShoppingListCheckOffService'];
+    ['ShoppingListCheckOffService'];
 
-  function ToBuyShoppingController($scope, service) {
-    $scope.toBuyList = service.toBuy;
-    $scope.buyItem = service.buyItem;
+  function ToBuyShoppingController(service) {
+    var self = this;
+
+    self.list = service.toBuyList;
+    self.buyItem = service.buyItem;
   }
 
-  function AlreadyBoughtShoppingController($scope, service) {
-    $scope.boughtList = service.bought;
+  function AlreadyBoughtShoppingController(service) {
+    var self = this;
+
+    self.list = service.boughtList;
   }
 
   function ShoppingListCheckOffService() {
     var self = this;
 
-    self.toBuy = [
+    self.toBuyList = [
       {name: 'pies', quantity: '3'},
       {name: 'apples', quantity: 10},
       {name: 'oranges', quantity: '11'},
@@ -37,18 +41,18 @@
       {name: 'sausages', quantity: 14}
     ];
 
-    self.bought = [];
+    self.boughtList = [];
 
     self.buyItem = function (item) {
-      self.bought.push(item);
+      self.boughtList.push(item);
       removeBoughtItem(item);
     };
 
     var removeBoughtItem = function (item) {
       var index = -1;
 
-      for (var i = 0; i < self.toBuy.length; i++) {
-        var temp = self.toBuy[i];
+      for (var i = 0; i < self.toBuyList.length; i++) {
+        var temp = self.toBuyList[i];
 
         if (temp.name === item.name && temp.quantity === item.quantity) {
           index = i;
@@ -56,7 +60,7 @@
         }
       }
 
-      self.toBuy.splice(index, 1);
+      self.toBuyList.splice(index, 1);
     }
   }
 })();
