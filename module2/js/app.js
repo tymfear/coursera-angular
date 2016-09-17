@@ -43,24 +43,11 @@
 
     self.boughtList = [];
 
-    self.buyItem = function (item) {
+    self.buyItem = function (index) {
+      var item = self.toBuyList[index];
+
       self.boughtList.push(item);
-      removeBoughtItem(item);
-    };
-
-    var removeBoughtItem = function (item) {
-      var index = -1;
-
-      for (var i = 0; i < self.toBuyList.length; i++) {
-        var temp = self.toBuyList[i];
-
-        if (temp.name === item.name && temp.quantity === item.quantity) {
-          index = i;
-          break;
-        }
-      }
-
       self.toBuyList.splice(index, 1);
-    }
+    };
   }
 })();
