@@ -24,11 +24,13 @@
   </div>
 
   <!-- Bonus loader (see Bonus section of the assignment) -->
-  <items-loader-indicator></items-loader-indicator>
+  <div ng-if="menu.loading">
+    <items-loader-indicator></items-loader-indicator>
+  </div>
 
   <found-items
       found-items="menu.found" on-remove="menu.remove(index)"
-      ng-if="menu.found.length">
+      ng-if="menu.found.length && !menu.loading">
   </found-items>
 
   <h2 ng-show="menu.found && !menu.found.length" class="text-center">
@@ -38,6 +40,7 @@
 
 <script src="js/app.js"></script>
 <script src="js/directives/found_items.js"></script>
+<script src="js/directives/items-loader-indicator.js"></script>
 <script src="js/services/menu_search_service.js"></script>
 <script src="js/controllers/narrow_it_down_controller.js"></script>
 </body>
