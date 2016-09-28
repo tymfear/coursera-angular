@@ -7,7 +7,7 @@
   function FoundItems() {
     return {
       restrict: 'E',
-      templateUrl: './templates/found_items.html',
+      templateUrl: '/templates/found_items.html',
       scope: {
         foundItems: '=',
         onRemove: '&'
