@@ -7,7 +7,7 @@
   function ItemsLoaderIndicator() {
     return {
       restrict: 'E',
-      templateUrl: '/module3/templates/items_loader_indicator.html',
+      templateUrl: './templates/items_loader_indicator.html',
       scope: {
       }
     };
