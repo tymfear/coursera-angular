@@ -9,7 +9,7 @@
       restrict: 'E',
       templateUrl: 'templates/found_items.html',
       scope: {
-        foundItems: '=',
+        foundItems: '<',
         onRemove: '&'
       }
     };
