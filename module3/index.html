@@ -33,7 +33,7 @@
       ng-if="menu.found.length && !menu.loading">
   </found-items>
 
-  <h2 ng-show="!menu.found.length" class="text-center">
+  <h2 ng-show="menu.found && !menu.found.length" class="text-center">
     Nothing found
   </h2>
 </div>

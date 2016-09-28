@@ -13,7 +13,6 @@
     menu.remove = removeFound;
 
     function narrowDown() {
-      if (!menu.searchTerm || !menu.searchTerm.length) {return}
       menu.loading = true;
 
       menu.items = MenuSearchService
