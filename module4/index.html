@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MenuApp">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+</head>
+<body class="container col-md-6 col-md-offset-3">
+
+<section>
+  <ui-view></ui-view>
+</section>
+
+<script src="vendor/bower_components/angular/angular.js"></script>
+<script
+    src="vendor/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="app/menuapp.module.js"></script>
+<script src="app/data/data.module.js"></script>
+<script src="app/data/menudata.service.js"></script>
+<script src="app/constants.js"></script>
+<script src="app/routes.js"></script>
+<script src="app/data/categories/categories.controller.js"></script>
+<script src="app/data/categories/categories.component.js"></script>
+<script src="app/data/items/items.controller.js"></script>
+<script src="app/data/items/items.component.js"></script>
+</body>
+</html>

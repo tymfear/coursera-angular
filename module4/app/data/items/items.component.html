@@ -1,0 +1,22 @@
+<h1 class="text-center">Items for {{$ctrl.category.name}}</h1>
+
+<table class="table table-bordered">
+  <thead>
+  <tr>
+    <td>Name</td>
+    <td>Description</td>
+    <td>Full Price</td>
+    <td>Half Price</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="item in $ctrl.list | orderBy : 'name'">
+    <td>{{item.name}}</td>
+    <td>{{item.description || 'No description available'}}</td>
+    <td>{{(item.price_large | currency) || 'N/A'}}</td>
+    <td>{{(item.price_small | currency) || 'N/A'}}</td>
+  </tr>
+  </tbody>
+</table>
+
+

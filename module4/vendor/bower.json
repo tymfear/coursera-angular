@@ -1,0 +1,21 @@
+{
+  "name": "vendor",
+  "homepage": "https://github.com/tymfear/coursera-angular",
+  "authors": [
+    "Tymur Daudov <tymfear@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-ui-router": "ui-router#^0.3.1"
+  }
+}

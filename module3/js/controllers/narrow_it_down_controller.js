@@ -41,5 +41,4 @@
       menu.found.splice(index, 1)
     }
   }
-
 })();
