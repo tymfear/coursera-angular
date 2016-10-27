@@ -1,0 +1,15 @@
+<div class="container">
+  <div ng-if="$ctrl.user">
+    <ul>
+      <h2>{{$ctrl.user.first_name}} {{$ctrl.user.last_name}}</h2>
+      <h3>{{$ctrl.user.email}}</h3>
+      <h3>{{$ctrl.user.phone}}</h3>
+    </ul>
+    <h2>Favorite Meal</h2>
+    <menu-item menu-item="$ctrl.favorite"></menu-item>
+  </div>
+  <div ng-hide="$ctrl.user" class="text-center h2">
+    Not Signed Up Yet. <a ui-sref="public.sign_up">Sign up Now!</a>
+  </div>
+</div>
+

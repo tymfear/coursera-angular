@@ -1,56 +1,71 @@
 <div class="container">
-    <h2 id="menu-categories-title" class="text-center">Sign Up</h2>
-    <form name="signUp.form" novalidate class="col-md-6 col-md-offset-3">
-        <div class="form-group">
-            <input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name"
-                   ng-model="signUp.user.first_name" required>
-            <span ng-if="signUp.form.first_name.$error.required && signUp.form.first_name.$touched">
+  <h2 id="menu-categories-title" class="text-center">Sign Up</h2>
+  <form name="signUp.form" novalidate class="col-md-6 col-md-offset-3">
+    <div class="form-group">
+      <input type="text" class="form-control" name="first_name"
+             id="first_name" placeholder="First Name"
+             ng-model="signUp.user.first_name" required>
+            <span
+                ng-if="signUp.form.first_name.$error.required && signUp.form.first_name.$touched">
                 Please provide your first name
             </span>
-        </div>
+    </div>
 
-        <div class="form-group">
-            <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name"
-                   ng-model="signUp.user.last_name" required>
-            <span ng-if="signUp.form.last_name.$error.required && signUp.form.last_name.$touched">
+    <div class="form-group">
+      <input type="text" class="form-control" name="last_name" id="last_name"
+             placeholder="Last Name"
+             ng-model="signUp.user.last_name" required>
+            <span
+                ng-if="signUp.form.last_name.$error.required && signUp.form.last_name.$touched">
                 Please provide your last name
             </span>
-        </div>
+    </div>
 
-        <div class="form-group">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Email"
-                   ng-model="signUp.user.email" required>
-            <span ng-if="signUp.form.email.$invalid && signUp.form.email.$touched">
+    <div class="form-group">
+      <input type="email" class="form-control" name="email" id="email"
+             placeholder="Email"
+             ng-model="signUp.user.email" required>
+            <span
+                ng-if="signUp.form.email.$invalid && signUp.form.email.$touched">
                 Please provide your valid email
             </span>
-        </div>
+    </div>
 
-        <div class="form-group">
-            <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number"
-                   ng-model="signUp.user.phone" required ng-pattern="/\d{3} \d{3}-\d{4}/i">
-            <span ng-if="(signUp.form.phone.$error.pattern || signUp.form.phone.$error.required) && signUp.form.phone.$touched">
+    <div class="form-group">
+      <input type="tel" class="form-control" name="phone" id="phone"
+             placeholder="Phone Number"
+             ng-model="signUp.user.phone" required
+             ng-pattern="/\d{3} \d{3}-\d{4}/i">
+            <span
+                ng-if="(signUp.form.phone.$error.pattern
+                || signUp.form.phone.$error.required)
+                && signUp.form.phone.$touched">
                 Please provide your phone in format: ### ###-####
             </span>
-        </div>
+    </div>
 
-        <div class="form-group">
-            <input type="tel" class="form-control" name="favorite" id="favorite" placeholder="Your favorite menu item"
-                   ng-model="signUp.user.favorite" ng-change="signUp.verifyFavorite()"
-                   ng-model-options='{ debounce: 500 }' required>
+    <div class="form-group">
+      <input type="tel" class="form-control" name="favorite" id="favorite"
+             placeholder="Your favorite menu item"
+             ng-model="signUp.user.favorite"
+             ng-change="signUp.verifyFavorite()"
+             ng-model-options='{ debounce: 500 }' required>
             <span ng-if="signUp.form.favorite.$invalid
                     && signUp.form.favorite.$touched
                     && !signUp.form.favorite.$error.required">
                 No such menu number exists
             </span>
-            <span ng-if="signUp.form.favorite.$error.required && signUp.form.favorite.$touched">
+            <span ng-if="signUp.form.favorite.$error.required
+            && signUp.form.favorite.$touched">
                 Please provide your favorite menu number
             </span>
-        </div>
+    </div>
 
-        <div class=" text-right form-group">
-            <input type="button" class="btn btn-default" ng-disabled="signUp.form.$invalid" ng-click="signUp.saveUser()"
-                   value="Submit">
-        </div>
-        <span ng-show="signUp.info_saved">Your information has been saved</span>
-    </form>
+    <div class=" text-right form-group">
+      <input type="button" class="btn btn-default"
+             ng-disabled="signUp.form.$invalid" ng-click="signUp.saveUser()"
+             value="Submit">
+    </div>
+    <span ng-show="signUp.info_saved">Your information has been saved</span>
+  </form>
 </div>
